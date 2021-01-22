@@ -23,11 +23,27 @@
 =end%>
 
 <%= form_for @user do |f| %>
-<%= f.label :username, 'Username' %>
-<%= f.text_field :username, placeholder: 'New user' %>
-<%= f.label :email, 'Email' %>
-<%= f.email_field :email, placeholder: 'Example@email.com'%>
-<%= f.label :password, 'Password' %>
-<%= f.password_field :password, placeholder: 'xxxx' %>
-<%= f.submit value: 'Submit' %>
+  <%= f.label :username, 'Username' %><br>
+  <%= f.text_field :username, placeholder: 'New user' %><br>
+  <% if @user.errors[:username].any? %>
+    <% @user.errors[:username].each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+  <%= f.label :email, 'Email' %><br>
+  <%= f.email_field :email, placeholder: 'Example@email.com'%><br>
+  <% if @user.errors[:email].any? %>
+    <% @user.errors[:email].each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+  <%= f.label :password, 'Password' %><br>
+  <%= f.password_field :password, placeholder: 'xxxx' %><br>
+  <% if @user.errors[:password].any? %>
+    <% @user.errors[:password].each do |msg| %>
+      <%= msg %><br>
+    <% end %>
+  <% end %>
+  <%= f.submit value: 'Submit' %>
 <% end %>
+<br>
