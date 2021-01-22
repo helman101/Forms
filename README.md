@@ -4,7 +4,9 @@
 
 > A basic form built in rails where username, email, and password is collected from users.
 > The form validates the presence of all the input fields and outputs errors in case a user missed an input field.
-> ![screenshot](./schema.PNG)
+
+## Screenshot
+![screenshot](./form.PNG)
 
 ## Built With
 
